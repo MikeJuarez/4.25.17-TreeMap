@@ -13,7 +13,6 @@ public class TreeMapPopulation {
      */
     public static void main(String[] args) {
         
-      
         TreeMap<String, Integer> tm = new TreeMap<>();
         
         //Top 5 States by Population numbers
@@ -53,13 +52,17 @@ public class TreeMapPopulation {
         tmc.iteratePrint();
         System.out.println("Entry Count: " + tmc.getTree().size());        
         
-        //Step 3. How to search a key in a TreeMap? Return True/False
+        //Step 3. How to search a key in a TreeMap? Print result to console.
         String key = "Illinois";
         
         tmh.hasKey(key);
         tmc.hasKey(key);
         
+        //Step 4. How to search a value in TreeMap? Print result to console. 
+        int value = 12801539;
         
+        tmh.hasValue(value);
+        tmc.hasValue(value);        
     }
     
 }

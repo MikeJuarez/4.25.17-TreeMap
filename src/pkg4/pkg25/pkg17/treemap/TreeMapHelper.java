@@ -69,6 +69,15 @@ public class TreeMapHelper {
           System.out.println("Sorry, the key: " + key + ", does not exist in this TreeMap");  
     }
     
+    //Step 4. How to search a value in TreeMap
+    public void hasValue(int value)
+    {
+        if (tm.containsValue(value))
+          System.out.println("Yes, the value: " + value + ", does exist in this TreeMap");
+        else
+          System.out.println("Sorry, the value: " + value + ", does not exist in this TreeMap");  
+    }
+    
     public TreeMap<String, Integer> getTree()
     {
         return tm;
