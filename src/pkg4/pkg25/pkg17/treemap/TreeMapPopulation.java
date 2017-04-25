@@ -26,31 +26,38 @@ public class TreeMapPopulation {
         //Create a new TreeMapHelper which will do the grunt work.
         TreeMapHelper tmh = new TreeMapHelper(tm);
         
-        //Get the tree in tmh
-        TreeMap<String, Integer> treeToCopy = tmh.getTree();
-        
+        //Step 1. 1. How to iterate through TreeMap
         //Print the tree from tmh
-        tmh.iteratePrint(treeToCopy);
-                
-        //Create a blank tree - prepping to be copied
-        TreeMap<String, Integer> copyOfTree = new TreeMap();
+        tmh.iteratePrint();
         
-        //Copy the original tree to the new blank tree
-        copyOfTree = tmh.copyTree(treeToCopy);
-        
+        ////2. How to copy Map content to another TreeMap
+        //Create a blank tree and copy original tree into the copy        
+        TreeMap<String, Integer> copyOfTree = tmh.copyTree();
+               
         //Add 6th State and Population in new copy to differentiate original
         copyOfTree.put("Illinois", 12801539);
         
+        //Create a TreeMapHelper for the copied version
+        TreeMapHelper tmc = new TreeMapHelper(copyOfTree);
+        
         //Just for testing, print both trees to see difference
         System.out.println("");
-        System.out.println("------------------");
-        System.out.println("Original TreeMap: ");
-        tmh.iteratePrint(treeToCopy);
+        System.out.println("------------cop---");
+        System.out.println("Original TreeMap: ");        
+        tmh.iteratePrint();
+        System.out.println("Entry Count: " + tmh.getTree().size());
         
         System.out.println("");
         System.out.println("------------------");
-        System.out.println("Copy of TreeMap: ");
-        tmh.iteratePrint(copyOfTree);
+        System.out.println("Copy of TreeMap: ");        
+        tmc.iteratePrint();
+        System.out.println("Entry Count: " + tmc.getTree().size());        
+        
+        //Step 3. How to search a key in a TreeMap? Return True/False
+        String key = "Illinois";
+        
+        tmh.hasKey(key);
+        tmc.hasKey(key);
         
         
     }

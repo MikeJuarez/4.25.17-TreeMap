@@ -2,8 +2,8 @@
  * This project answers the following:
  * 1. How to iterate through TreeMap
  * 2. How to copy Map content to another TreeMap
- * 3.  
- * 4. 
+ * 3. How to search a key in TreeMap?
+ * 4. How to search a value in TreeMap?
  * 5.
  * 6.
  * 7.
@@ -31,10 +31,10 @@ public class TreeMapHelper {
     }
     
     //Step 1. How to iterate through TreeMap
-    public void iteratePrint(TreeMap<String, Integer> tree)
+    public void iteratePrint()
     {
         //Returns the set of entries
-        Set set = tree.entrySet();
+        Set set = tm.entrySet();
         
         //Get an interator
         Iterator i = set.iterator();
@@ -49,15 +49,24 @@ public class TreeMapHelper {
     }   
     
     //Step 2. How to copy Map content to another TreeMap
-    public TreeMap<String, Integer> copyTree(TreeMap<String, Integer> tree)
+    public TreeMap<String, Integer> copyTree()
     {
         //Declare a new blank TreeMap
         TreeMap<String, Integer> treeCopy = new TreeMap();
         
         //Copy all mappings from tm TreeMap to the copy (treeCopy)
-        tree.putAll(treeCopy);
+        treeCopy.putAll(tm);
         
         return treeCopy;
+    }
+    
+    //Step 3. How to search a key in TreeMap?    
+    public void hasKey(String key)
+    {        
+        if (tm.containsKey(key))
+          System.out.println("Yes, the key: " + key + ", does exist in this TreeMap");
+        else
+          System.out.println("Sorry, the key: " + key + ", does not exist in this TreeMap");  
     }
     
     public TreeMap<String, Integer> getTree()
