@@ -4,13 +4,17 @@
  * 2. How to copy Map content to another TreeMap
  * 3. How to search a key in TreeMap?
  * 4. How to search a value in TreeMap?
- * 5.
- * 6.
- * 7.
- * 8.
+ * 5. How to delete all elements from TreeMap?
+ * 6. How to sort keys in TreeMap by using Comparator?
+ * 7. How to sort keys in TereMap by using Comparator with user define objects?
+ * 8. How to get sorted sub-map from TreeMap?
+ * 9. How to get first key element from TreeMap (Sorted Map)?
+ * 10. How to get last key element from TreeMap (Sorted Map)?
+ * 11. How to reverse sorted keys in a TreeMap?
  */
 package pkg4.pkg25.pkg17.treemap;
 
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -21,7 +25,7 @@ import java.util.TreeMap;
  * @author Michael Juarez
  */
 
-public class TreeMapHelper {
+public class TreeMapHelper implements Comparator<String>{
     
     TreeMap<String, Integer> tm = new TreeMap();
     
@@ -82,5 +86,26 @@ public class TreeMapHelper {
     {
         return tm;
     }
+    
+    //Step 5.  How to delete all elements from TreeMap?    
+    public void removeAll()
+    {
+        tm.clear();
+    }
+    
+    //Step 6.  How to sort keys in TreeMap by using Comparator?        
+    @Override
+    public int compare(String a, String b)
+    {
+        return a.compareTo(b);
+    }
+    
+    //Step 7.  How to sort keys in TreeMap by using Comparator with user define objects?
+    //Added this step in new Class: TopCareers    
+    
+    //Step 8.  How to get sorted sub-map from TreeMap?
+    //Step 9.  How to get first key element from TreeMap (Sorted Map)?
+    //Step 10.  How to get last key element from TreeMap (Sorted Map)?
+    //Step 11.  How to reverse sorted keys in a TreeMap?
     
 }
